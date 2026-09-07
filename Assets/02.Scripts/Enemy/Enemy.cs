@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    Animator _animator;
     [SerializeField] private int _health = 10;
     [SerializeField] protected float _moveSpeed;
     [SerializeField] protected float _damage;
@@ -10,6 +11,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] Item _itemHealthUp;
     [SerializeField] Item _itemFireSpeedUp;
     private bool isDead = false;
+
+    private void Awake()
+    {
+        // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
+        _animator = GetComponent<Animator>();
+    }
 
 
     private void Start()
@@ -27,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        _animator.SetTrigger("hit");
         // 충돌 시 체력 감소
         _health -= damage;
         if (isDead)
