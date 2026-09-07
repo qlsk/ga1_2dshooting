@@ -61,5 +61,4 @@ public class PlayerFire : MonoBehaviour
             CoolTime = 0.1f;
         }
     }
-    
 }
