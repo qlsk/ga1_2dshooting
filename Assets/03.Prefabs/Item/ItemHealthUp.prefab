@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemHealthUp
   _startTimer: 2
-  _moveSpeed: 3
+  _moveSpeed: 1
 --- !u!58 &6912347585895381160
 CircleCollider2D:
   m_ObjectHideFlags: 0
