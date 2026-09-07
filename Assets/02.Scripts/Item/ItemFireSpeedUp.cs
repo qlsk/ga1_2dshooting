@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class ItemFireSpeedUp : Item
 {
-    float time = 0;
-    int direction = 1;
-
     private void Start()
     {
         startPoint = transform.position;

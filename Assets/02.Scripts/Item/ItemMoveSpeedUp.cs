@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class ItemMoveSpeedUp : Item
 {
-    float time = 0;
-    int direction = 1;
-
     private void Start()
     {
         startPoint = transform.position;
