@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a89f93505dfe6947b6d0541874656de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  _health: 5
+  _health: 10
 --- !u!95 &828072019
 Animator:
   serializedVersion: 7
