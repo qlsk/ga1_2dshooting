@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Enemy")
+        if (coll.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(1);
             Destroy(coll.gameObject);
