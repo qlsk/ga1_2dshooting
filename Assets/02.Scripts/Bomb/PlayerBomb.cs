@@ -3,12 +3,11 @@ using UnityEngine;
 public class PlayerBomb : MonoBehaviour
 {
     private float _bombCoolTime = 10f;
-    private float _bombCoolTimer = 0f;
+    private float _bombCoolTimer = 10f;
     [SerializeField] private GameObject _bombEffectPrefab;
 
     private void Start()
     {
-        _bombCoolTimer = 10f;
     }
 
     private void Update()
