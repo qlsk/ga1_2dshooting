@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     {
         // 30퍼 확률로 아이템 생성
         int itemSpawnRandom = Random.Range(0, 100);
-        if (itemSpawnRandom <= 30)
+        if (itemSpawnRandom < 30)
         {
             int whichItemSpawn = Random.Range(0, 3);
             Item item = null;
