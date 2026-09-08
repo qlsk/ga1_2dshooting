@@ -10,7 +10,14 @@ public class HomingEnemy : Enemy
 
     private void Start()
     {
+        float _rotation;
+        float _x;
+        float _y;
         _player = GameObject.FindGameObjectWithTag("Player");
+        if (_player == null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()

@@ -4,14 +4,18 @@ public class AimedEnemy : Enemy
 {
     private GameObject _player;
     private Vector2 _direction;
-    private float _rotation;
-    private float _x;
-    private float _y;
+
 
     private void Start()
     {
+        float _rotation;
+        float _x;
+        float _y;
         _player = GameObject.FindWithTag("Player");
-
+        if (_player == null)
+        {
+            Destroy(gameObject);
+        }
         _direction = _player.transform.position - transform.position;
         _x = _direction.x;
         _y = _direction.y;

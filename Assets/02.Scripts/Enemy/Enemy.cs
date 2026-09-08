@@ -25,11 +25,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        // 1. 방향을 구한다.
-        Vector3 dir = Vector3.down;
-
-        // 2. 이동한다.
-        transform.position += _moveSpeed * Time.deltaTime * dir;
     }
 
     public void TakeDamage(int damage)
