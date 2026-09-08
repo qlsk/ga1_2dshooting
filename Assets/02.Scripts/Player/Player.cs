@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _health = 1;
+    [SerializeField] private GameObject _deathEffectPrefab;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
+            Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
