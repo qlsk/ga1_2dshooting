@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b6dfb1338eda44cb789334d69a823c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DownwardEnemy
-  _health: 300
+  _health: 30
   _moveSpeed: 5
   _damage: 1
   _itemMoveSpeedUp: {fileID: 6507700885788455967, guid: 5bd9aa7d995e3c1429a31e478c5bebb0, type: 3}
