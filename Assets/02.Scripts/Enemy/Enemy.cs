@@ -29,13 +29,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _animator.SetTrigger("hit");
-        // 충돌 시 체력 감소
-        _health -= damage;
         if (isDead)
         {
             return;
         }
+
+        _animator.SetTrigger("hit");
+        // 충돌 시 체력 감소
+        _health -= damage;
 
         // 체력이 0 이하라면
         if (_health <= 0)
