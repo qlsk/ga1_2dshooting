@@ -27,6 +27,7 @@ public class HomingEnemy : Enemy
 
         _rotation = Mathf.Atan2(_y, _x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, 90 + _rotation);
-        transform.Translate(_moveSpeed * Time.deltaTime * _direction);
+        // transform.Translate(_moveSpeed * Time.deltaTime * _direction);
+        transform.position += _moveSpeed * Time.deltaTime * (Vector3)_direction;
     }
 }
