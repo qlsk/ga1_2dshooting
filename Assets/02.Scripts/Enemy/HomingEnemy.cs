@@ -17,6 +17,7 @@ public class HomingEnemy : Enemy
         if (_player == null)
         {
             Destroy(gameObject);
+            return;
         }
     }
 

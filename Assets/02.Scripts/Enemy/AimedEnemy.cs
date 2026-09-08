@@ -15,6 +15,7 @@ public class AimedEnemy : Enemy
         if (_player == null)
         {
             Destroy(gameObject);
+            return;
         }
         _direction = _player.transform.position - transform.position;
         _x = _direction.x;
@@ -22,7 +23,6 @@ public class AimedEnemy : Enemy
         _direction.Normalize();
 
         _rotation = Mathf.Atan2(_y, _x) * Mathf.Rad2Deg;
-        Debug.Log(_rotation);
         transform.rotation = Quaternion.Euler(0f, 0f, 90 + _rotation);
     }
 
