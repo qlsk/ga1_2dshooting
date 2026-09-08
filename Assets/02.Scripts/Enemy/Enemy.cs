@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] Item _itemFireSpeedUp;
     private bool isDead = false;
 
+    // 죽을 때 생성할 이펙트 프리팹
+    [SerializeField] private GameObject _deathEffectPrefab;
     private void Awake()
     {
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
             isDead = true;
             SpawnItem();
             // 제거
+            Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
