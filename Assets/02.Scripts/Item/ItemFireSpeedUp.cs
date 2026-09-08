@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemFireSpeedUp : Item
 {
+    [SerializeField] private GameObject _acquireEffectPrefab;
     private void Start()
     {
         startPoint = transform.position;
@@ -37,7 +38,7 @@ public class ItemFireSpeedUp : Item
             {
                 pf.FireSpeedUp();
             }
-
+            Instantiate(_acquireEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

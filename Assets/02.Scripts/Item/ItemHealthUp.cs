@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemHealthUp : Item
 {
+    [SerializeField] private GameObject _acquireEffectPrefab;
     private void Start()
     {
         startPoint = transform.position;
@@ -34,6 +35,7 @@ public class ItemHealthUp : Item
         {
             Player player = other.gameObject.GetComponent<Player>();
             player.HealthUp();
+            Instantiate(_acquireEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   _health: 10
+  _deathEffectPrefab: {fileID: 8791802859087666345, guid: ae07f2a45f14a82428409cfe410e6002, type: 3}
 --- !u!95 &828072019
 Animator:
   serializedVersion: 7

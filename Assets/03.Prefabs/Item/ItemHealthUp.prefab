@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemHealthUp
   _startTimer: 2
   _moveSpeed: 1
+  _acquireEffectPrefab: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
 --- !u!50 &8173000789564216294
 Rigidbody2D:
   serializedVersion: 5

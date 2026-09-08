@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemMoveSpeedUp : Item
 {
+    [SerializeField] private GameObject _acquireEffectPrefab;
     private void Start()
     {
         startPoint = transform.position;
@@ -34,6 +35,7 @@ public class ItemMoveSpeedUp : Item
         {
             PlayerMove playerMove = other.gameObject.GetComponent<PlayerMove>();
             playerMove.MoveSpeedUp();
+            Instantiate(_acquireEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
