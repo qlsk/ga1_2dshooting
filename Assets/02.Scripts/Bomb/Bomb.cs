@@ -7,7 +7,6 @@ public class Bomb : MonoBehaviour
     private float _scale = 0f;
     private float _maxScale = 1f;
     private float _scaleStayTime = 1f;
-    private float _scaleReductionTime = 2f;
     private float _reduceTimer = 0f;
     private float _time;
     [SerializeField] private GameObject _deathByBombEffectPrefab;
@@ -23,7 +22,6 @@ public class Bomb : MonoBehaviour
         if (_timer >= _disappearTime)
         {
             Destroy(gameObject);
-            _timer = 0f;
         }
 
         if (transform.localScale.x < _maxScale && _timer <= _scaleStayTime)
