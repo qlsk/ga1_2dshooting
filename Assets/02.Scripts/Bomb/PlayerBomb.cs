@@ -15,7 +15,7 @@ public class PlayerBomb : MonoBehaviour
         _bombCoolTimer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.B) && (_bombCoolTimer >= _bombCoolTime))
         {
-            Instantiate(_bombEffectPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+            Instantiate(_bombEffectPrefab, transform.position, Quaternion.identity);
             _bombCoolTimer = 0;
         }
     }

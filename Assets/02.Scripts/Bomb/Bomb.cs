@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
@@ -9,6 +10,7 @@ public class Bomb : MonoBehaviour
     private float _scaleStayTime = 1f;
     private float _reduceTimer = 0f;
     private float _time;
+    private float _positionY = 0f;
     [SerializeField] private GameObject _deathByBombEffectPrefab;
 
     private void Start()
@@ -22,6 +24,12 @@ public class Bomb : MonoBehaviour
         if (_timer >= _disappearTime)
         {
             Destroy(gameObject);
+        }
+
+        if (transform.position.y < 3f)
+        {
+            _positionY = Mathf.Lerp(0, 1f, 0.005f);
+            transform.position += new Vector3(0, _positionY, 0);
         }
 
         if (transform.localScale.x < _maxScale && _timer <= _scaleStayTime)
