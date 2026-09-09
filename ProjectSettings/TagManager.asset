@@ -42,8 +42,29 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2855354139
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1612707821
+    locked: 0
+  - name: Item
+    uniqueID: 3929243403
+    locked: 0
+  - name: Enemy
+    uniqueID: 2938471247
+    locked: 0
+  - name: Bullet
+    uniqueID: 2053463251
+    locked: 0
+  - name: Fx
+    uniqueID: 1999651999
+    locked: 0
+  - name: UI
+    uniqueID: 3512252559
     locked: 0
   m_RenderingLayers:
   - Default

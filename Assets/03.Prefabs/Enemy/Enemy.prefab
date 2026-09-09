@@ -80,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1356496049
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
@@ -112,6 +112,7 @@ MonoBehaviour:
   _itemMoveSpeedUp: {fileID: 6507700885788455967, guid: 5bd9aa7d995e3c1429a31e478c5bebb0, type: 3}
   _itemHealthUp: {fileID: 73551522975107987, guid: 2c8b44adf09ed084389298f9cb14f581, type: 3}
   _itemFireSpeedUp: {fileID: 6600096575448233419, guid: c4de20a542322d847b099eca15176587, type: 3}
+  _deathEffectPrefab: {fileID: 0}
 --- !u!50 &4421380962355056265
 Rigidbody2D:
   serializedVersion: 5
