@@ -8,6 +8,15 @@ public class Bullet : MonoBehaviour
 
     private bool _isHit = false;
 
+    private AudioSource _bulletSound;
+
+    private void Awake()
+    {
+        _bulletSound = GetComponent<AudioSource>();
+        _bulletSound.pitch = Random.Range(0.9f, 1.1f);
+        _bulletSound.Play();
+    }
+
     private void Update()
     {
         transform.position += Speed * Time.deltaTime * Vector3.up;
