@@ -5,9 +5,11 @@ public class Bomb : MonoBehaviour
     private float _disappearTime = 3f;
     private float _timer = 0f;
     private float _scale = 0f;
-    private float _scaleStayTime = 0.5f;
-    private float _scaleReductionTime = 2.5f;
-    private float _scaleReductionTimer = 0f;
+    private float _maxScale = 1f;
+    private float _scaleStayTime = 1f;
+    private float _scaleReductionTime = 2f;
+    private float _reduceTimer = 0f;
+    private float _time;
     [SerializeField] private GameObject _deathByBombEffectPrefab;
 
     private void Start()
@@ -24,19 +26,17 @@ public class Bomb : MonoBehaviour
             _timer = 0f;
         }
 
-        if (_timer < _scaleStayTime)
+        if (transform.localScale.x < _maxScale && _timer <= _scaleStayTime)
         {
-            _scale += Time.deltaTime * 0.03f;
-            transform.localScale += new Vector3(_scale, _scale, _scale);
+            _scale = Mathf.Lerp(0, _maxScale, _timer);
+            transform.localScale = new Vector3(_scale, _scale, _scale);
+            _time = _timer;
         }
-        else if (_timer > _scaleReductionTime)
+        else if (transform.localScale.x >= 0 && _timer >= _disappearTime - _time)
         {
-            _scale += Time.deltaTime * 0.03f;
-            transform.localScale -= new Vector3(_scale, _scale, _scale);
-        }
-        else
-        {
-            _scale = 0;
+            _reduceTimer += Time.deltaTime;
+            _scale = Mathf.Lerp(_maxScale, 0, _reduceTimer);
+            transform.localScale = new Vector3(_scale, _scale, _scale);
         }
     }
 

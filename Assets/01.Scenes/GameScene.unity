@@ -898,6 +898,7 @@ GameObject:
   - component: {fileID: 828072019}
   - component: {fileID: 828072021}
   - component: {fileID: 828072020}
+  - component: {fileID: 828072022}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1145,6 +1146,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBomb
   _bombEffectPrefab: {fileID: 4800606492477183603, guid: e457e67da3d576840b2bb7cc1ce04bff, type: 3}
+--- !u!114 &828072022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828072010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019bb34c1a680bd4d8d49767a5982b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTrail
+  _rightTrail: {fileID: 971733751}
+  _leftTrail: {fileID: 1298648088}
 --- !u!1 &971733751
 GameObject:
   m_ObjectHideFlags: 0
