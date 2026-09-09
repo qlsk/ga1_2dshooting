@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Animator _animator;
+    private Animator _animator;
+
+    // TODO: 에너미가 공격 당할 때 재생시켜주는 피격 사운드
+    private AudioSource _damagedAudioSource;
+
     [SerializeField] private int _health = 10;
     [SerializeField] protected float _moveSpeed;
     [SerializeField] protected float _damage;
@@ -12,12 +16,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] Item _itemFireSpeedUp;
     private bool isDead = false;
 
+
     // 죽을 때 생성할 이펙트 프리팹
     [SerializeField] private GameObject _deathEffectPrefab;
+
     private void Awake()
     {
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
         _animator = GetComponent<Animator>();
+        _damagedAudioSource = GetComponent<AudioSource>();
     }
 
 
@@ -36,6 +43,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+
         _animator.SetTrigger("hit");
         // 충돌 시 체력 감소
         _health -= damage;
@@ -48,6 +56,10 @@ public class Enemy : MonoBehaviour
             // 제거
             Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+        else
+        {
+            _damagedAudioSource.Play();
         }
     }
 

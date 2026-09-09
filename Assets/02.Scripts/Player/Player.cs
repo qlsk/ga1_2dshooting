@@ -4,9 +4,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int _health = 1;
     [SerializeField] private GameObject _deathEffectPrefab;
+    private AudioSource _damagedSound;
 
     private void Start()
     {
+        _damagedSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -20,6 +22,10 @@ public class Player : MonoBehaviour
         {
             Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+        else
+        {
+            _damagedSound.Play();
         }
     }
 
