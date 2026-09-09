@@ -26,11 +26,8 @@ public class Bomb : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (transform.position.y < 3f)
-        {
-            _positionY = Mathf.Lerp(0, 1f, 0.005f);
-            transform.position += new Vector3(0, _positionY, 0);
-        }
+        _positionY = Mathf.Lerp(0, 2f, 0.005f);
+        transform.position += new Vector3(0, _positionY, 0);
 
         if (transform.localScale.x < _maxScale && _timer <= _scaleStayTime)
         {
