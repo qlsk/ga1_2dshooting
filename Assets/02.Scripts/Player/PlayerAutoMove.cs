@@ -16,6 +16,8 @@ public class PlayerAutoMove : MonoBehaviour
         {
             FindNearestTarget();
         }
+
+        Move();
     }
 
     private void Move()
@@ -24,8 +26,8 @@ public class PlayerAutoMove : MonoBehaviour
 
         // 2. 방향을 구한다.
         Vector3 direction = _target.transform.position - transform.position;
-        direction.Normalize();
         direction.y = 0;
+        direction.Normalize();
 
         // 3. 속도에 맞게 이동을 한다.
         transform.position += _speed * Time.deltaTime * direction;
