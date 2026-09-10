@@ -12,8 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     // 관리: 특정 데이터에 대한 무결성과 생성, 읽기, 수정 삭제 등과 관련된 로직
     private int _bestScore;
-    private int _currentScore = 0;
-    private int _lastRefreshScore = -1;
+    private int _currentScore;
 
     // UI 책임 추가
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
@@ -39,20 +38,22 @@ public class ScoreManager : MonoBehaviour
         {
             _bestScore = _currentScore;
         }
+
+        Refresh();
     }
 
     private void Update()
+    {
+    }
+
+    private void Start()
     {
         Refresh();
     }
 
     private void Refresh()
     {
-        if (_lastRefreshScore == _currentScore) return;
-
         _bestScoreTextUI.text = $"Best Score: {_bestScore}";
         _currentScoreTextUI.text = $"Score: {_currentScore}";
-
-        _lastRefreshScore = _currentScore;
     }
 }
