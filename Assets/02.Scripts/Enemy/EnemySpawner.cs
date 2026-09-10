@@ -5,18 +5,22 @@ public class EnemySpawner : MonoBehaviour
 {
     // 필요 속성
     // - 타이머
-    [Header("스폰 간격")][SerializeField] private float _spawnInterval = 3f;
+    [Header("스폰 간격")]
+    [SerializeField] private float _spawnInterval = 3f;
 
     private float _timer;
 
     private int[] spawnNumber = new int[10] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
 
     // - 생성할 프리팹
-    [Header("downward 적 프리팹")][SerializeField] private Enemy _downwardEnemyPrefab;
+    [Header("downward 적 프리팹")]
+    [SerializeField] private Enemy _downwardEnemyPrefab;
 
-    [Header("aimed 적 프리팹")][SerializeField] private Enemy _aimedEnemyPrefab;
+    [Header("aimed 적 프리팹")]
+    [SerializeField] private Enemy _aimedEnemyPrefab;
 
-    [Header("homing 적 프리팹")][SerializeField] private Enemy _homingEnemyPrefab;
+    [Header("homing 적 프리팹")]
+    [SerializeField] private Enemy _homingEnemyPrefab;
 
     private void Start()
     {
