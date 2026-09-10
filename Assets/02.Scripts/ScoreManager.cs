@@ -7,7 +7,8 @@ public class ScoreManager : MonoBehaviour
     // 1. 전역적으로 누구를 뜻한지 안다. -> 전역적으로 접근 가능하다.
     // 2. 그 누구가 한 명인 것을 안다. -> 인스턴스(생성된 객체)가 하나임을 보장한다.
     // static(정적)
-    public static ScoreManager Instance;
+    private static ScoreManager _instance = null;
+    public static ScoreManager Instance => _instance;
 
     // 관리: 특정 데이터에 대한 무결성과 생성, 읽기, 수정 삭제 등과 관련된 로직
     private int _bestScore;
@@ -20,7 +21,13 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        // 늦게 생성된 Manager는 삭제
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
     }
 
     public void AddScore(int score)
