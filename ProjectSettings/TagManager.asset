@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - SubBullet
   - FxTemporaire
+  - Undefined
+  - Item
   layers:
   - Default
   - TransparentFX
