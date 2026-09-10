@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerAutoMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private GameObject _enemy = null;
-    private Vector2 _dir;
+
+    private GameObject _target = null;
 
     private void Start()
     {
@@ -12,11 +12,32 @@ public class PlayerAutoMove : MonoBehaviour
 
     private void Update()
     {
+        if (_target == null)
+        {
+            FindNearestTarget();
+        }
+    }
+
+    private void Move()
+    {
+        if (_target == null) return;
+
+        // 2. 방향을 구한다.
+        Vector3 direction = _target.transform.position - transform.position;
+        direction.Normalize();
+        direction.y = 0;
+
+        // 3. 속도에 맞게 이동을 한다.
+        transform.position += _speed * Time.deltaTime * direction;
+    }
+
+    void FindNearestTarget()
+    {
         // 1. 타겟을 구한다.
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
         if (targets.Length == 0) return;
 
-        GameObject target = targets[0];
+        _target = targets[0];
         float minDistance = float.MaxValue;
         // 1-1. 가장 가까운 타겟을 찾는다.
         foreach (GameObject enemy in targets)
@@ -27,61 +48,8 @@ public class PlayerAutoMove : MonoBehaviour
             {
                 // 타겟 변경
                 minDistance = distance;
-                target = enemy;
+                _target = enemy;
             }
         }
-
-        // 2. 방향을 구한다.
-        Vector3 direction = target.transform.position - transform.position;
-        direction.Normalize();
-        direction.y = 0;
-
-        // 3. 속도에 맞게 이동을 한다.
-        transform.position += _speed * Time.deltaTime * direction;
-
-        // if ( _enemy == null || _enemy.transform.position.y < transform.position.y + 0.5f)
-        // {
-        //     GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        //     foreach (GameObject enemy in Enemies)
-        //     {
-        //         if (enemy.transform.position.y < _enemy.transform.position.y)
-        //         {
-        //             _enemy = enemy;
-        //         }
-        //         else if (_enemy == null)
-        //         {
-        //             _enemy = enemy;
-        //         }
-        //     }
-        // }
-        // else
-        // {
-        //     _dir = new Vector2(0, _enemy.transform.position.x - transform.position.x);
-        //     _dir.Normalize();
-        //     transform.position += Speed * Time.deltaTime * (Vector3)_dir;
-        // }
-
-
-        // if (_enemy == null)
-        // {
-        //     _enemy = GameObject.FindGameObjectWithTag("Enemy");
-        // }
-        //
-        // GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        // foreach (GameObject en in Enemies)
-        // {
-        //     if (en.transform.position.y < _enemy.transform.position.y && _enemy.transform.position.y - 1f < transform.position.y)
-        //     {
-        //         _enemy = en;
-        //     }
-        //     else
-        //     {
-        //     }
-        // }
-        //
-        //
-        // _dir = new Vector2(_enemy.transform.position.x - transform.position.x, 0);
-        // _dir.Normalize();
-        // transform.position += Speed * Time.deltaTime * (Vector3)_dir;
     }
 }
