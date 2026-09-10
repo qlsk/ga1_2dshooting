@@ -1039,6 +1039,7 @@ GameObject:
   - component: {fileID: 828072020}
   - component: {fileID: 828072022}
   - component: {fileID: 828072023}
+  - component: {fileID: 828072024}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1160,7 +1161,7 @@ MonoBehaviour:
   RightFirePosition: {fileID: 768973321}
   CoolTime: 0.6
   CoolTimer: 0
-  AutoFireMode: 0
+  AutoFireMode: 1
 --- !u!114 &828072015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,7 +1179,7 @@ MonoBehaviour:
   RightFirePosition: {fileID: 353449506}
   CoolTime: 0.6
   CoolTimer: 0
-  AutoFireMode: 0
+  AutoFireMode: 1
 --- !u!114 &828072018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,6 +1398,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &828072024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828072010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc94907bc00a34f43b1e38096b3a4d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAutoMove
+  _speed: 5
 --- !u!1 &971733751
 GameObject:
   m_ObjectHideFlags: 0
