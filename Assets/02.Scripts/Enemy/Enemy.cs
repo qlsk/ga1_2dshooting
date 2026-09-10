@@ -53,8 +53,12 @@ public class Enemy : MonoBehaviour
         {
             isDead = true;
             SpawnItem();
-            ScoreManager scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
-            scoreManager.AddScore(100);
+
+            // ScoreManager scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+            // ScoreManager scoreManager = ScoreManager.Instance;
+            // scoreManager.AddScore(100);
+            ScoreManager.Instance.AddScore(100);
+
             // 제거
             Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
