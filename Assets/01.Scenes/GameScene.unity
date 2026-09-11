@@ -188,6 +188,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 154378158569581504, guid: 729b18e6338af1849ac6ee9f8b50d8ea, type: 3}
     - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 0633c76276cade64ba3e2a4c168941a1, type: 2}
+    - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
       propertyPath: _aimedEnemyPrefab
       value: 
       objectReference: {fileID: 7121117573829585721, guid: 3e4a179b123f62a43952e5e3b9b553fe, type: 3}
@@ -283,8 +287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -161.00002, y: 1020}
-  m_SizeDelta: {x: 700, y: 50}
+  m_AnchoredPosition: {x: 151.35362, y: 1020}
+  m_SizeDelta: {x: 1324.7073, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &28735642
 MonoBehaviour:
@@ -420,8 +424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -161, y: 1085}
-  m_SizeDelta: {x: 700, y: 83.09}
+  m_AnchoredPosition: {x: 151.35364, y: 1085}
+  m_SizeDelta: {x: 1324.7073, y: 83.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71234702
 MonoBehaviour:
@@ -2095,6 +2099,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 154378158569581504, guid: 729b18e6338af1849ac6ee9f8b50d8ea, type: 3}
     - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 0633c76276cade64ba3e2a4c168941a1, type: 2}
+    - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
       propertyPath: _aimedEnemyPrefab
       value: 
       objectReference: {fileID: 7121117573829585721, guid: 3e4a179b123f62a43952e5e3b9b553fe, type: 3}
@@ -2859,6 +2867,10 @@ PrefabInstance:
       propertyPath: _downwardPrefab
       value: 
       objectReference: {fileID: 154378158569581504, guid: 729b18e6338af1849ac6ee9f8b50d8ea, type: 3}
+    - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 0633c76276cade64ba3e2a4c168941a1, type: 2}
     - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
       propertyPath: _aimedEnemyPrefab
       value: 
