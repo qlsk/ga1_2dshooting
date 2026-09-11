@@ -31,7 +31,6 @@ public class Bullet : MonoBehaviour
 
     private void PlaySound()
     {
-        Debug.Log("총알 활성화");
         _bulletSound.pitch = Random.Range(0.9f, 1.1f);
         _bulletSound.Play();
     }
