@@ -1499,7 +1499,6 @@ GameObject:
   - component: {fileID: 828072011}
   - component: {fileID: 828072013}
   - component: {fileID: 828072014}
-  - component: {fileID: 828072015}
   - component: {fileID: 828072018}
   - component: {fileID: 828072019}
   - component: {fileID: 828072021}
@@ -1624,29 +1623,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
   BulletPrefab: {fileID: 8166745839562913755, guid: acb5eaef779005849b86a1d17bffbda0, type: 3}
+  SubBulletPrefab: {fileID: 0}
   LeftFirePosition: {fileID: 1637000509}
   RightFirePosition: {fileID: 768973321}
+  SubLeftFirePosition: {fileID: 674064118}
+  SubRightFirePosition: {fileID: 353449506}
   CoolTime: 0.6
-  CoolTimer: 0
-  AutoFireMode: 0
---- !u!114 &828072015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828072010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eee904f51c4768478b654983eee1307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
-  BulletPrefab: {fileID: 8166745839562913755, guid: ce7a265c80907e349afbf6f50edd14cd, type: 3}
-  LeftFirePosition: {fileID: 674064118}
-  RightFirePosition: {fileID: 353449506}
-  CoolTime: 0.6
-  CoolTimer: 0
-  AutoFireMode: 0
+  AutoFireMode: 1
 --- !u!114 &828072018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,8 +2824,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0995ebe2ce8d54f418f3a08a959913d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPool
-  _bulletPrefab: {fileID: 7072843618172977191, guid: acb5eaef779005849b86a1d17bffbda0, type: 3}
-  _poolSize: 50
+  _bulletPrefabs:
+  - {fileID: 7072843618172977191, guid: acb5eaef779005849b86a1d17bffbda0, type: 3}
+  - {fileID: 7072843618172977191, guid: ce7a265c80907e349afbf6f50edd14cd, type: 3}
+  _poolSize: 30
 --- !u!4 &1441347524
 Transform:
   m_ObjectHideFlags: 0

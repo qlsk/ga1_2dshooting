@@ -5,6 +5,9 @@ public class Bullet : MonoBehaviour
     [Header("이동속도")]
     public float Speed = 5f;
 
+    [SerializeField] private BulletType _type;
+    public BulletType Type => _type;
+
     public int Damage;
 
     private bool _isHit = false;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2969834222805887999}
   m_Layer: 10
   m_Name: SubBullet
-  m_TagString: SubBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   Speed: 3
+  _type: 1
   Damage: 5
 --- !u!61 &1903074587812640707
 BoxCollider2D:
