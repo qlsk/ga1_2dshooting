@@ -8,23 +8,9 @@ public class EnemySpawner : MonoBehaviour
     [Header("스폰 간격")]
     [SerializeField] private float _spawnInterval = 3f;
 
+    [SerializeField] private EnemySpawnData[] _spawnDatas;
+
     private float _timer;
-
-    private int[] spawnNumber = new int[10] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
-
-    // - 생성할 프리팹
-    [Header("downward 적 프리팹")]
-    [SerializeField] private Enemy _downwardEnemyPrefab;
-
-    [Header("aimed 적 프리팹")]
-    [SerializeField] private Enemy _aimedEnemyPrefab;
-
-    [Header("homing 적 프리팹")]
-    [SerializeField] private Enemy _homingEnemyPrefab;
-
-    private void Start()
-    {
-    }
 
     private void Update()
     {
@@ -41,24 +27,33 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        int randomNumber = Random.Range(0, spawnNumber.Length);
+        int randomPercent = Random.Range(0, 100);
 
-        Enemy enemy = null;
+        // 가중치 랜덤 선택
+        // 각 아이템에 가중치를 부여하고, 가중치가 클수록 높은 확률로 선택되도록 하는 방식
 
-        switch (spawnNumber[randomNumber])
+        // 1. 추첨할 수 있는 모든 가중치를 더한다.
+        int totalWeight = 0;
+        foreach (EnemySpawnData data in _spawnDatas)
         {
-            case 0:
-                enemy = Instantiate(_downwardEnemyPrefab);
+            totalWeight += data.Weight;
+        }
+
+        // 2. 전체 가중치 범위에서 랜덤한 정수를 뽑는다.
+        int randomWeight = Random.Range(0, totalWeight);
+
+        // 3. 가중치를 누적하면서 선택된 구간을 찾는다.
+        int cumulativeWeight = 0;
+
+        foreach (EnemySpawnData data in _spawnDatas)
+        {
+            cumulativeWeight += data.Weight;
+            if (cumulativeWeight > randomWeight)
+            {
+                GameObject enemy = Instantiate(data.EnemyPrefab);
                 enemy.transform.position = transform.position;
                 break;
-            case 1:
-                enemy = Instantiate(_aimedEnemyPrefab);
-                enemy.transform.position = transform.position;
-                break;
-            case 2:
-                enemy = Instantiate(_homingEnemyPrefab);
-                enemy.transform.position = transform.position;
-                break;
+            }
         }
     }
 }
