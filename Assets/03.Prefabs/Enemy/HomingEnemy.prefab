@@ -187,6 +187,7 @@ MonoBehaviour:
   _itemMoveSpeedUp: {fileID: 6507700885788455967, guid: 5bd9aa7d995e3c1429a31e478c5bebb0, type: 3}
   _itemHealthUp: {fileID: 73551522975107987, guid: 2c8b44adf09ed084389298f9cb14f581, type: 3}
   _itemFireSpeedUp: {fileID: 6600096575448233419, guid: c4de20a542322d847b099eca15176587, type: 3}
+  _itemSpawnDataTable: {fileID: 11400000, guid: 409cce8e1744fe7458aa623dd359c1f9, type: 2}
   _deathEffectPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
 --- !u!95 &4449123714074227326
 Animator:

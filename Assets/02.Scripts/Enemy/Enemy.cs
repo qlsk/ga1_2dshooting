@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Item _itemFireSpeedUp;
     private bool isDead = false;
 
+    [SerializeField] ItemSpawnDataTableSO _itemSpawnDataTable;
 
     // 죽을 때 생성할 이펙트 프리팹
     [SerializeField] private GameObject _deathEffectPrefab;
@@ -26,7 +27,6 @@ public class Enemy : MonoBehaviour
         _animator = GetComponent<Animator>();
         _damagedAudioSource = GetComponent<AudioSource>();
     }
-
 
     private void Start()
     {
@@ -73,25 +73,28 @@ public class Enemy : MonoBehaviour
     {
         // 30퍼 확률로 아이템 생성
         int itemSpawnRandom = Random.Range(0, 100);
-        if (itemSpawnRandom < 30)
+
+        if (itemSpawnRandom < 30f)
         {
-            int whichItemSpawn = Random.Range(0, 3);
-            Item item = null;
-            // 아이템 3개 중 하나 스폰
-            switch (whichItemSpawn)
+            int totalWeight = 0;
+
+            foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
             {
-                case 0:
-                    item = Instantiate(_itemFireSpeedUp);
-                    item.transform.position = transform.position;
+                totalWeight += data.Weight;
+            }
+
+            int randomWeight = Random.Range(0, totalWeight);
+
+            int cumulativeWeight = 0;
+
+            foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
+            {
+                cumulativeWeight += data.Weight;
+                if (cumulativeWeight > randomWeight)
+                {
+                    Instantiate(data.itemPrefab, transform.position, Quaternion.identity);
                     break;
-                case 1:
-                    item = Instantiate(_itemHealthUp);
-                    item.transform.position = transform.position;
-                    break;
-                case 2:
-                    item = Instantiate(_itemMoveSpeedUp);
-                    item.transform.position = transform.position;
-                    break;
+                }
             }
         }
     }
