@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Header("이동속도")] public float Speed = 5f;
+    [Header("이동속도")]
+    public float Speed = 5f;
 
     public int Damage;
 
@@ -13,6 +14,21 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         _bulletSound = GetComponent<AudioSource>();
+    }
+
+    // 활성화 될때마다 자동으로 호출되는 이벤트 함수
+
+    public void OnSpawn()
+    {
+        // 프리팹이 풀에 의해서 활성화 될때마다
+        // 초기화 하는 코드들이 들어간다.
+        PlaySound();
+        _isHit = false;
+    }
+
+    private void PlaySound()
+    {
+        Debug.Log("총알 활성화");
         _bulletSound.pitch = Random.Range(0.9f, 1.1f);
         _bulletSound.Play();
     }
@@ -36,6 +52,6 @@ public class Bullet : MonoBehaviour
 
         enemy.TakeDamage(Damage);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

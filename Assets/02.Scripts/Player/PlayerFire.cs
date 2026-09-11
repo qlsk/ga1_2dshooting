@@ -45,8 +45,8 @@ public class PlayerFire : MonoBehaviour
     public void Fire()
     {
         //  프리팹으로부터 총알 만들기
-        GameObject rightBullet = Instantiate(BulletPrefab);
-        GameObject leftBullet = Instantiate(BulletPrefab);
+        Bullet rightBullet = BulletPool.Instance.GetBullet();
+        Bullet leftBullet = BulletPool.Instance.GetBullet();
 
         // 총알 위치를 총구 위치로 바꾸기
         rightBullet.transform.position = RightFirePosition.transform.position;
