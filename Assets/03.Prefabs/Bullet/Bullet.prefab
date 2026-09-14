@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   Speed: 5
+  _type: 0
   Damage: 10
 --- !u!61 &1764927997889116089
 BoxCollider2D:
@@ -167,7 +168,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4d5d9f3cdf1feee47bfa20a0fb0c5c28, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 0
   Mute: 0

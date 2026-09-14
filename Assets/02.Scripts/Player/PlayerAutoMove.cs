@@ -10,6 +10,12 @@ public class PlayerAutoMove : MonoBehaviour
     private float _enemyDistance;
     private float _itemDistance;
 
+    public float Speed = 5f;
+    public float MaxPositionY;
+    public float MinPositionY;
+    public float MaxPositionX;
+    public float MinPositionX;
+
     enum target
     {
         Enemy,
@@ -17,9 +23,9 @@ public class PlayerAutoMove : MonoBehaviour
     }
 
     private target _target;
-
-    private void Start()
+    public void MoveSpeedUp()
     {
+        _speed++;
     }
 
     private void Update()
@@ -37,6 +43,24 @@ public class PlayerAutoMove : MonoBehaviour
             case target.Item:
                 MoveToItem();
                 break;
+        }
+
+        if (transform.position.y < MinPositionY)
+        {
+            transform.position = new Vector2(transform.position.x, MinPositionY);
+        }
+        else if (transform.position.y > MaxPositionY)
+        {
+            transform.position = new Vector2(transform.position.x, MaxPositionY);
+        }
+
+        if (transform.position.x < MinPositionX)
+        {
+            transform.position = new Vector2(MaxPositionX, transform.position.y);
+        }
+        else if (transform.position.x > MaxPositionX)
+        {
+            transform.position = new Vector2(MinPositionX, transform.position.y);
         }
     }
 

@@ -16,27 +16,28 @@ public class PlayerFire : MonoBehaviour
     public float CoolTime = 0.6f;
     private float _coolTimer = 0;
     // 자동 발사
-    public bool AutoFireMode = false;
+    private bool _autoFireMode = false;
 
-    private void Start()
+    public void SetAuto(bool auto)
     {
+        _autoFireMode = auto;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            AutoFireMode = true;
+            _autoFireMode = true;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            AutoFireMode = false;
+            _autoFireMode = false;
         }
 
         _coolTimer -= Time.deltaTime;
 
         // 총알 발사 쿨타임이 돌아왔을때, Fire 버튼이 눌리거나 자동 공격 모드면
-        if (_coolTimer <= 0 && (Input.GetButtonDown("Fire1") || AutoFireMode))
+        if (_coolTimer <= 0 && (Input.GetButtonDown("Fire1") || _autoFireMode))
         {
             Fire();
             _coolTimer = CoolTime;

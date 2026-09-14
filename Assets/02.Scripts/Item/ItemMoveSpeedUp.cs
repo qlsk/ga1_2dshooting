@@ -34,7 +34,9 @@ public class ItemMoveSpeedUp : Item
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerMove playerMove = other.gameObject.GetComponent<PlayerMove>();
+            PlayerAutoMove playerAutoMove = other.gameObject.GetComponent<PlayerAutoMove>();
             playerMove.MoveSpeedUp();
+            playerAutoMove.MoveSpeedUp();
             Instantiate(_acquireEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
