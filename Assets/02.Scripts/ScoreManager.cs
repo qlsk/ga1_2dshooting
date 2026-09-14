@@ -14,12 +14,19 @@ public class ScoreManager : MonoBehaviour
     private int _bestScore;
     private int _currentScore;
 
+    public int Score => _currentScore;
+
+    public void SpendScore(int amount)
+    {
+        _currentScore -= amount;
+        Refresh();
+    }
+
     private const string SaveKey = "BestScore";
 
     // UI 책임 추가
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
-
 
     private void Awake()
     {
@@ -46,10 +53,6 @@ public class ScoreManager : MonoBehaviour
         }
 
         Refresh();
-    }
-
-    private void Update()
-    {
     }
 
     private void Start()
