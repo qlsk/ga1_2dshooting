@@ -51,8 +51,8 @@ public class Bullet : MonoBehaviour
             return;
 
         _isHit = true;
-
-        enemy.TakeDamage(Damage);
+        int finalDamage = Damage + (int)UpgradeManager.Instance.Upgrades[0].CurrentValue
+        enemy.TakeDamage(finalDamage);
 
         gameObject.SetActive(false);
     }

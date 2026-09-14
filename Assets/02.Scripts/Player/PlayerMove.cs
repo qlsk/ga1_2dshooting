@@ -26,6 +26,7 @@ public class PlayerMove : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         Vector2 dir = new Vector2(h, v);
         dir = dir.normalized;
+        float finalSpeed = Speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
         transform.position += Speed * Time.deltaTime * (Vector3)dir;
 
         _animator.SetInteger("x", (int)dir.x);

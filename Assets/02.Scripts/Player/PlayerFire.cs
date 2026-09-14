@@ -40,6 +40,8 @@ public class PlayerFire : MonoBehaviour
         if (_coolTimer <= 0 && (Input.GetButtonDown("Fire1") || _autoFireMode))
         {
             Fire();
+
+            float finalFireRate = CoolTime - UpgradeManager.Instance.Upgrades[1].CurrentValue;
             _coolTimer = CoolTime;
         }
     }
