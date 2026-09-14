@@ -42,7 +42,11 @@ public class PlayerFire : MonoBehaviour
             Fire();
 
             float finalFireRate = CoolTime - UpgradeManager.Instance.Upgrades[1].CurrentValue;
-            _coolTimer = CoolTime;
+            if (finalFireRate <= 0.1f)
+            {
+                finalFireRate = 0.1f;
+            }
+            _coolTimer = finalFireRate;
         }
     }
 

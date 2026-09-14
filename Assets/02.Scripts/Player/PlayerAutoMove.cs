@@ -95,7 +95,8 @@ public class PlayerAutoMove : MonoBehaviour
 
         Vector3 direction = _targetItem.transform.position - transform.position;
         direction.Normalize();
-        transform.position += _speed * Time.deltaTime * direction;
+        float finalSpeed = _speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
+        transform.position += finalSpeed * Time.deltaTime * direction;
     }
 
     public void FindNearestTarget()
