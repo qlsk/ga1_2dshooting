@@ -10,6 +10,9 @@ TagManager:
   - FxTemporaire
   - Undefined
   - Item
+  - FireSpeedUp
+  - ATKUp
+  - MoveSpeedUp
   layers:
   - Default
   - TransparentFX
