@@ -101,6 +101,8 @@ public class PlayerAutoMove : MonoBehaviour
 
     public void FindNearestTarget()
     {
+        _enemyDistance = float.MaxValue;
+        _itemDistance = float.MaxValue;
         // 1. 타겟을 구한다.
         GameObject[] targetsEnemy = GameObject.FindGameObjectsWithTag("Enemy");
         if (targetsEnemy.Length != 0)
