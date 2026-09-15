@@ -22,8 +22,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = SimpleInput.GetAxis("Horizontal");
+        float v = SimpleInput.GetAxis("Vertical");
         Vector2 dir = new Vector2(h, v);
         dir = dir.normalized;
         float finalSpeed = Speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
