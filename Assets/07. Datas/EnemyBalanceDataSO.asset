@@ -16,10 +16,10 @@ MonoBehaviour:
   - RequiredScore: 1000
     HealthMultiplier: 1.2
   - RequiredScore: 5000
-    HealthMultiplier: 2
+    HealthMultiplier: 1.4
   - RequiredScore: 10000
-    HealthMultiplier: 4
+    HealthMultiplier: 2
   - RequiredScore: 50000
-    HealthMultiplier: 8
+    HealthMultiplier: 2.5
   - RequiredScore: 100000
-    HealthMultiplier: 30
+    HealthMultiplier: 3
