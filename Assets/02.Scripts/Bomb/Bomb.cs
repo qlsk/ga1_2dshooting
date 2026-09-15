@@ -12,6 +12,7 @@ public class Bomb : MonoBehaviour
     private float _time;
     private float _positionY = 0f;
     [SerializeField] private GameObject _deathByBombEffectPrefab;
+    [SerializeField] private float _moveSpeed;
 
     private void Start()
     {
@@ -26,8 +27,7 @@ public class Bomb : MonoBehaviour
             Destroy(gameObject);
         }
 
-        _positionY = Mathf.Lerp(0, 2f, 0.005f);
-        transform.position += new Vector3(0, _positionY, 0);
+        transform.position += _moveSpeed * Time.deltaTime * Vector3.up;
 
         if (transform.localScale.x < _maxScale && _timer <= _scaleStayTime)
         {
