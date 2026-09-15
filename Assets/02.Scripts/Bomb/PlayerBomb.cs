@@ -13,7 +13,7 @@ public class PlayerBomb : MonoBehaviour
     private void Update()
     {
         _bombCoolTimer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.B) && (_bombCoolTimer >= _bombCoolTime))
+        if (SimpleInput.GetButton("Bomb") && (_bombCoolTimer >= _bombCoolTime))
         {
             Instantiate(_bombEffectPrefab, transform.position, Quaternion.identity);
             _bombCoolTimer = 0;
