@@ -4,10 +4,10 @@ public class Enemy : MonoBehaviour
 {
     private Animator _animator;
 
-    // TODO: 에너미가 공격 당할 때 재생시켜주는 피격 사운드
     private AudioSource _damagedAudioSource;
 
-    [SerializeField] private int _health = 10;
+    [SerializeField] private int _baseHealth; // Enemy의 기준 체력
+    [SerializeField] private int _health = 10; // Enemy의 현재 체력
     [SerializeField] protected float _moveSpeed;
     [SerializeField] protected float _damage;
 
@@ -28,12 +28,10 @@ public class Enemy : MonoBehaviour
         _damagedAudioSource = GetComponent<AudioSource>();
     }
 
-    private void Start()
+    public void SetHealthBalance(float multiplier)
     {
-    }
-
-    private void Update()
-    {
+        // 체력 초기화
+        _health = (int)(_baseHealth * multiplier);
     }
 
     public void TakeDamage(int damage)

@@ -196,6 +196,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7121117573829585721, guid: 3e4a179b123f62a43952e5e3b9b553fe, type: 3}
     - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
+      propertyPath: _balanceDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 87d4414ff9134f646a2f0a24a3ecc67a, type: 2}
+    - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
       propertyPath: _homingEnemyPrefab
       value: 
       objectReference: {fileID: 1935869798895550287, guid: b71978aba8878874c850e8bac255c4ca, type: 3}
@@ -2187,6 +2191,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7121117573829585721, guid: 3e4a179b123f62a43952e5e3b9b553fe, type: 3}
     - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
+      propertyPath: _balanceDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 87d4414ff9134f646a2f0a24a3ecc67a, type: 2}
+    - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
       propertyPath: _homingEnemyPrefab
       value: 
       objectReference: {fileID: 1935869798895550287, guid: b71978aba8878874c850e8bac255c4ca, type: 3}
@@ -3622,6 +3630,10 @@ PrefabInstance:
       propertyPath: _aimedEnemyPrefab
       value: 
       objectReference: {fileID: 7121117573829585721, guid: 3e4a179b123f62a43952e5e3b9b553fe, type: 3}
+    - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
+      propertyPath: _balanceDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 87d4414ff9134f646a2f0a24a3ecc67a, type: 2}
     - target: {fileID: 4587704030919629790, guid: ea73b73271cfcd741bae03979f378796, type: 3}
       propertyPath: _homingEnemyPrefab
       value: 

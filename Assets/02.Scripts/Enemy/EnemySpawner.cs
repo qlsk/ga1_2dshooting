@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
 
+    [SerializeField] private EnemyBalanceDataSO _balanceDataTable;
     private float _timer;
 
     private void Update()
@@ -50,8 +51,27 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject enemy = Instantiate(data.EnemyPrefab);
                 enemy.transform.position = transform.position;
+                enemy.GetComponent<Enemy>().SetHealthBalance(GetHealthMultiplier());
                 break;
             }
         }
+    }
+
+    private float GetHealthMultiplier()
+    {
+        // TODO: BestScore에 따라 반환
+        float multiplier = 1f;
+        int bestScore = ScoreManager.Instance.BestScore;
+        foreach (EnemyBalanceData data in _balanceDataTable.Datas)
+        {
+            if (data.RequiredScore > bestScore)
+            {
+                return multiplier;
+            }
+
+            multiplier = data.HealthMultiplier;
+        }
+
+        return multiplier;
     }
 }
