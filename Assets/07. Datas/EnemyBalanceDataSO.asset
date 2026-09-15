@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBalanceDataSO
   Datas:
   - RequiredScore: 1000
-    HealthMultiplier: 1
+    HealthMultiplier: 1.2
   - RequiredScore: 5000
     HealthMultiplier: 2
   - RequiredScore: 10000
