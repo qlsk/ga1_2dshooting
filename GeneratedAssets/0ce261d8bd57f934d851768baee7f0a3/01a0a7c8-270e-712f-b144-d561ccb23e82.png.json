@@ -1,0 +1,31 @@
+{
+    "asset": "0ce261d8bd57f934d851768baee7f0a3",
+    "fileName": "01a0a7c8-270e-712f-b144-d561ccb23e82.png",
+    "prompt": "A clean 2D game UI toggle button sprite for an AUTO feature, AUTO ON state. Modern casual game UI style, slightly rounded rectangular button, glowing bright cyan active indicator light, bright vibrant blue/cyan theme with enabled feel, crisp clear bold readable AUTO text centered on the button, subtle glossy highlights and soft drop bevel shadows, polished mobile game interface asset. Centered composition, front-facing orthographic view, isolated on plain white background.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}

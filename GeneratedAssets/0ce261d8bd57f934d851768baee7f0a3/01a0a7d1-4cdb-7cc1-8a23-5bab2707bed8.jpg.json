@@ -1,0 +1,41 @@
+{
+    "asset": "0ce261d8bd57f934d851768baee7f0a3",
+    "fileName": "01a0a7d1-4cdb-7cc1-8a23-5bab2707bed8.jpg",
+    "prompt": "Change this button to an active enabled ON state. Keep the exact same shape, proportions, position, layout, font, and frame. Make the main button vibrant bright blue/cyan. Make the oval indicator light on the right glow brightly with glowing neon cyan/green light. Make the AUTO text clear, crisp, and bright white with subtle gloss. Plain white background.",
+    "negativePrompt": "",
+    "model": "seedream-4-5",
+    "modelName": "Seedream 4.5",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": [
+            {
+                "doodleReferenceType": 7,
+                "doodle": [],
+                "label": "Image",
+                "strength": 0.25,
+                "invertStrength": false,
+                "assetReferenceGuid": "0ce261d8bd57f934d851768baee7f0a3",
+                "unlabeledIndex": -1
+            }
+        ]
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
